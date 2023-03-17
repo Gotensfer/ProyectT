@@ -143,7 +143,7 @@ MonoBehaviour:
   attackCD: 2
   newTargetAdquisitionTime: 1
   movementSpeed: 1
-  damage: 1
+  damage: 2
   damagedVisualVelocityModifier: 4
   rangedProyectile: {fileID: 5076561252075957729, guid: 831d5826d6f2b124681a1d674d5ac75e, type: 3}
 --- !u!114 &3633394404766072191

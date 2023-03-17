@@ -139,7 +139,7 @@ MonoBehaviour:
   maxHealth: 5
   team: 0
   targetRange: 20
-  attackRange: 1
+  attackRange: 1.75
   attackCD: 1
   newTargetAdquisitionTime: 1
   movementSpeed: 1

@@ -29,6 +29,11 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
+    public virtual void AddHealth(int health)
+    {
+        this.health = Mathf.Clamp(this.health + health, 0, maxHealth);
+    }
+
     protected virtual void Die()
     {
         Destroy(gameObject);

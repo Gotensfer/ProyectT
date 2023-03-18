@@ -103,3 +103,4 @@ Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
 # Fuente: https://forum.unity.com/threads/probuilder-settings-and-git.742934/#:~:text=Unity%20Technologies&text=You%20can%20safely%20add%20the,saved%20in%20the%20appropriate%20place.
 
 /ProjectSettings/Packages/com.unity.probuilder/Settings.json
+.vsconfig

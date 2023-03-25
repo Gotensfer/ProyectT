@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3633394404766072184}
   - component: {fileID: -8300737795532467493}
   - component: {fileID: 3633394404766072187}
-  - component: {fileID: 3633394404766072191}
+  - component: {fileID: 5432058620114875061}
   m_Layer: 0
   m_Name: Town archer
   m_TagString: Untagged
@@ -146,7 +146,7 @@ MonoBehaviour:
   damage: 2
   damagedVisualVelocityModifier: 4
   rangedProyectile: {fileID: 5076561252075957729, guid: 831d5826d6f2b124681a1d674d5ac75e, type: 3}
---- !u!114 &3633394404766072191
+--- !u!114 &5432058620114875061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3633394404766072186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64649132088b86d4292b86b88a680468, type: 3}
+  m_Script: {fileID: 11500000, guid: 49836ad6343cc234b9f65c099a0c657b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

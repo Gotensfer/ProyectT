@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AITarget : MonoBehaviour
+public class Targeter : MonoBehaviour
 {
     public Transform TargetClosest(float range, Allegiance targetAllegiance)
     {

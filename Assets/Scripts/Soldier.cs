@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AITarget))]
+[RequireComponent(typeof(Targeter))]
 public abstract class Soldier : Entity
 {
     [Header("Soldier stats")]
@@ -16,7 +16,7 @@ public abstract class Soldier : Entity
     [Space]
     [SerializeField] float damagedVisualVelocityModifier = 1;
 
-    protected AITarget aiTarget;   
+    protected Targeter targeter;   
     protected bool canAttack = true;
     protected bool atAttackRange;
     protected Transform target;
@@ -31,7 +31,7 @@ public abstract class Soldier : Entity
 
     protected void Awake()
     {
-        aiTarget = GetComponent<AITarget>();
+        targeter = GetComponent<Targeter>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
 
@@ -64,7 +64,7 @@ public abstract class Soldier : Entity
                 transform.Translate(movementVector);
             }
 
-            if (aiTarget.CheckProximityToTarget(target, attackRange))
+            if (targeter.CheckProximityToTarget(target, attackRange))
             {
                 atAttackRange = true;
             }
@@ -92,7 +92,7 @@ public abstract class Soldier : Entity
 
     protected virtual void Target(Allegiance targetAllegiance)
     {
-        target = aiTarget.TargetClosest(targetRange, targetAllegiance);
+        target = targeter.TargetClosest(targetRange, targetAllegiance);
     }
 
     IEnumerator SoldierBehaviour()

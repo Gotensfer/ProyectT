@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 156796799801476861}
   - component: {fileID: 7523883264748055297}
   - component: {fileID: 156796799801476860}
-  - component: {fileID: 156796799801476848}
+  - component: {fileID: 5080447792628999609}
   m_Layer: 0
   m_Name: Invader thief
   m_TagString: Untagged
@@ -145,7 +145,7 @@ MonoBehaviour:
   movementSpeed: 1.5
   damage: 1
   damagedVisualVelocityModifier: 4
---- !u!114 &156796799801476848
+--- !u!114 &5080447792628999609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,6 +154,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 156796799801476859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64649132088b86d4292b86b88a680468, type: 3}
+  m_Script: {fileID: 11500000, guid: 49836ad6343cc234b9f65c099a0c657b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

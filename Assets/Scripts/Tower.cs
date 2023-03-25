@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AITarget))]
+[RequireComponent(typeof(Targeter))]
 public class Tower : Building
 {
     [SerializeField] float attackRange;
@@ -14,11 +14,11 @@ public class Tower : Building
 
     protected Allegiance targetAllegiance;
     Transform target;
-    AITarget aiTarget;
+    Targeter targeter;
 
     private void Awake()
     {
-        aiTarget = GetComponent<AITarget>();
+        targeter = GetComponent<Targeter>();
 
         if (team == Allegiance.town) targetAllegiance = Allegiance.invader;
         else targetAllegiance = Allegiance.town;
@@ -43,7 +43,7 @@ public class Tower : Building
 
             if (!isActive) continue;
 
-            target = aiTarget.TargetClosest(attackRange, targetAllegiance);
+            target = targeter.TargetClosest(attackRange, targetAllegiance);
 
             if (target != null) Fire();
 

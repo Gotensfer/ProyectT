@@ -1013,8 +1013,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1527388617366678468}
   - component: {fileID: 1527388617366678473}
-  - component: {fileID: 1527388617366678470}
   - component: {fileID: 1527388617366678471}
+  - component: {fileID: 9093634453622886143}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -1056,18 +1056,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &1527388617366678470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527388617366678469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64649132088b86d4292b86b88a680468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1527388617366678471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,6 +1082,18 @@ MonoBehaviour:
   damage: 2
   attackCD: 2
   towerProyectile: {fileID: 5076561252075957729, guid: 831d5826d6f2b124681a1d674d5ac75e, type: 3}
+--- !u!114 &9093634453622886143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527388617366678469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49836ad6343cc234b9f65c099a0c657b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1527388617573685823
 GameObject:
   m_ObjectHideFlags: 0

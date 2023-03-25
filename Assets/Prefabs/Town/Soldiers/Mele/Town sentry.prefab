@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 636587324619864482}
   - component: {fileID: 3195497844480077593}
   - component: {fileID: 636587324619864483}
-  - component: {fileID: 636587324619864511}
+  - component: {fileID: 8925943564362934268}
   m_Layer: 0
   m_Name: Town sentry
   m_TagString: Untagged
@@ -145,7 +145,7 @@ MonoBehaviour:
   movementSpeed: 1
   damage: 1
   damagedVisualVelocityModifier: 4
---- !u!114 &636587324619864511
+--- !u!114 &8925943564362934268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,6 +154,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 636587324619864480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64649132088b86d4292b86b88a680468, type: 3}
+  m_Script: {fileID: 11500000, guid: 49836ad6343cc234b9f65c099a0c657b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

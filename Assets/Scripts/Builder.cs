@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Common;
 using UnityEngine;
 
 public class Builder : Entity
@@ -9,6 +10,10 @@ public class Builder : Entity
     [SerializeField] float buildingDistance = 1f;
 
     [SerializeField] float movementSpeed = 1f;
+
+    [SerializeField] int buildingStrenght;
+
+    [SerializeField] float buildingCD;
 
     bool CheckNearbyBuilding()
     {
@@ -34,19 +39,29 @@ public class Builder : Entity
         transform.Translate(movementVector);
     }
 
-    IEnumerator BuilderBehaviour_Build()
+    IEnumerator BuildBehaviour()
     {
         while (true)
         {
+            if (!CheckNearbyBuilding())
+            {
+                Move(transform.position - targetBuilding.transform.position);
+            }
+            else
+            {
+                targetBuilding.AddBuildPoints(buildingStrenght);
+                yield return new WaitForSeconds(buildingCD);
+            }
 
+            yield return null;
         }
     }
 
-    IEnumerator BuildBehaviour_Return()
+    IEnumerator ReturnBehaviour()
     {
         while (true)
         {
-
+            
         }
     }
 }

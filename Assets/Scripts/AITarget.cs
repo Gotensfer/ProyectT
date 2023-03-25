@@ -28,4 +28,19 @@ public class AITarget : MonoBehaviour
 
         return target;
     }
+
+    public bool CheckProximityToTarget(Transform target, float distance)
+    {
+        Vector3 rayCastDirection = (target.position - transform.position).normalized;
+
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, rayCastDirection, distance);
+
+        int len = hits.Length;
+        for (int i = 0; i < len; i++)
+        {
+            if (hits[i].transform == target) return true;
+        }
+
+        return false;
+    }
 }

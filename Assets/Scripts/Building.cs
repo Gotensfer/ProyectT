@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : Entity
+public abstract class Building : Entity
 {  
     [Header("Building config")]
     [SerializeField] GameObject foundationBuilding;
     [SerializeField] GameObject halfdoneBuilding;
     [SerializeField] GameObject finishedBuildingVisual;
+    [SerializeField] SpriteRenderer getHitVisual;
 
     [SerializeField] private int requieredBuildPoints;
     private int currentBuildPoints;
 
-    protected bool isActive;
+    [SerializeField] protected bool isActive;
     private bool isBuilt;
 
-    [SerializeField] protected int size;
-    public int Size { get => size; }
+    [SerializeField] float damagedVisualVelocityModifier = 5f;
+
+    protected Color originalColor = new Color(0.2f, 0.2f, 0.2f, 0);
+    protected Color damagedColor = new Color(0.2f, 0.2f, 0.2f);
+    protected Color dyingColor = Color.black;
 
     public void AddBuildPoints(int buildPoints)
     {
@@ -43,6 +47,11 @@ public class Building : Entity
         }
     }
 
+    private void Update()
+    {
+        getHitVisual.color = Color.Lerp(getHitVisual.color, originalColor, Time.deltaTime * damagedVisualVelocityModifier);
+    }
+
     private void FinishBuilding()
     {
         Destroy(foundationBuilding);
@@ -52,5 +61,25 @@ public class Building : Entity
 
         isActive = true;
         isBuilt = true;
+    }
+
+    public override void ReceiveHit(int damage)
+    {
+        base.ReceiveHit(damage);
+
+        if (health > 0) getHitVisual.color = damagedColor;
+        else getHitVisual.color = dyingColor;
+    }
+
+    public virtual void InitPlacement()
+    {
+        foundationBuilding.SetActive(true);
+        halfdoneBuilding.SetActive(false);
+        finishedBuildingVisual.SetActive(false);
+
+        health = 1;
+
+        isActive = false;
+        isBuilt = false;
     }
 }

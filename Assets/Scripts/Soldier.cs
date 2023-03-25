@@ -35,6 +35,9 @@ public abstract class Soldier : Entity
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
 
+        if (team == Allegiance.town) targetAllegiance = Allegiance.invader;
+        else targetAllegiance = Allegiance.town;
+
         StartCoroutine(SoldierBehaviour());
     }
 
@@ -61,7 +64,7 @@ public abstract class Soldier : Entity
                 transform.Translate(movementVector);
             }
 
-            if (Vector2.Distance(transform.position, target.position) <= attackRange)
+            if (aiTarget.CheckProximityToTarget(target, attackRange))
             {
                 atAttackRange = true;
             }
@@ -99,11 +102,7 @@ public abstract class Soldier : Entity
             if (target == null)
             {
                 yield return new WaitForSeconds(newTargetAdquisitionTime);
-
                 
-                if (team == Allegiance.town) targetAllegiance = Allegiance.invader;
-                else targetAllegiance = Allegiance.town;
-
                 Target(targetAllegiance);
             }
             else
